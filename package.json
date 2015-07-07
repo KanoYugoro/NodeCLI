@@ -1,0 +1,25 @@
+{
+  "name": "semverupdater",
+  "version": "1.0.0",
+  "description": "Bumps version to semvers guidelines and compiles and pushes things",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KanoYugoro/NodeCLI.git"
+  },
+  "author": "Anson Wayman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KanoYugoro/NodeCLI/issues"
+  },
+  "bin": {
+	"semverupdater": "index.js"
+  },
+  "homepage": "https://github.com/KanoYugoro/NodeCLI#readme"
+}
