@@ -19,3 +19,7 @@ if (program.patch) console.log("Bumping patch");
 if (program.build) console.log("Build command executed");
 if (program.tag) console.log("Gittag called");
 if (program.fullbuild) console.log("fullbuild called");
+
+var shell = require("shelljs");
+
+shell.exec("echo shell.exec works");
