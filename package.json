@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/KanoYugoro/NodeCLI#readme",
   "dependencies": {
+    "chai": "^3.0.0",
     "shelljs": "^0.5.1"
   }
 }
