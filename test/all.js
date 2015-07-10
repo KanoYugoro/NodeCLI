@@ -43,7 +43,7 @@ describe("versionIO", function() {
 	})
 	describe("#readVersion()",function() {
 		it("should return the version value of the testpackage.json in the test directory",function(done2){
-			var result = versionIO.readVersion("../test/testpackage.json",function(err,version){
+			var result2 = versionIO.readVersion("./test/testpackage.json",function(version){
 				expect(version).to.equal("1.0.0");
 			});
 			done2();
