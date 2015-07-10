@@ -17,3 +17,7 @@ exports.gitCommit = function(message)
 	}
 }
 
+exports.gitPush = function()
+{
+	shell.exec("git push origin master --force");
+}
