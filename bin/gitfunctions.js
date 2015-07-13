@@ -17,7 +17,20 @@ exports.gitCommit = function(message)
 	}
 }
 
+exports.gitTag = function(version,message)
+{
+	if (message)
+	{
+		var tempstring = "git tag -a v"+version+" -m \""+message+"\"";
+		shell.exec(tempstring);
+	}
+	else
+	{
+		console.log("Please specify a message before tagging");
+	}
+}
+
 exports.gitPush = function()
 {
-	shell.exec("git push origin master --force");
+	shell.exec("git push origin --tags --force");
 }

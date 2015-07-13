@@ -40,12 +40,11 @@ if (program.major || program.minor || program.patch)
 
 if (program.tag)
 {
-	
+	gitfunctions.gitTag(packageversion,program.tag);
 }
 
 if (program.commit) 
 {
-	console.log(program.commit);
 	gitfunctions.gitCommit(program.commit);
 }
 
