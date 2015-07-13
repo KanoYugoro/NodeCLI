@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 exports = module.exports = {}
 
 exports.bumpPatch = function(version){

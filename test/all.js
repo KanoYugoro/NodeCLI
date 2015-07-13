@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 var versionbumper = require('../bin/versionbumper.js');
 var versionIO = require('../bin/versionIO.js');
 var expect = require('chai').expect;

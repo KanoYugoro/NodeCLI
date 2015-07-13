@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 exports = module.exports = {}
 var fs = require('fs');
 
@@ -12,7 +10,7 @@ exports.writeVersion = function(file,newversion,callback)
 		var result = JSON.parse(toparse);
 		var oldversion = result.version;
 		result.version = newversion;
-		var towrite = JSON.stringify(result);
+		var towrite = JSON.stringify(result, null, 4);
 		fs.writeFile(file,towrite,function(err){
 			if (err)
 			{

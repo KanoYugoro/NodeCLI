@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 exports = module.exports = {}
 var shell = require('shelljs');
 
