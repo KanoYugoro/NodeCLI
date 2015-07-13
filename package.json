@@ -1,6 +1,6 @@
 {
     "name": "semverupdater",
-    "version": "1.0.2",
+    "version": "0.1.2",
     "description": "Bumps version to semvers guidelines and compiles and pushes things",
     "main": "index.js",
     "directories": {
