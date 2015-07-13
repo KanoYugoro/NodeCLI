@@ -30,5 +30,5 @@ exports.gitTag = function(version,message)
 
 exports.gitPush = function()
 {
-	shell.exec("git push origin --tags --force");
+	shell.exec("git push origin --tags");
 }
