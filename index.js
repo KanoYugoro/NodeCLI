@@ -10,6 +10,8 @@ versionIO.readVersion('package.json',function(version) {
 
 program
 	.version('0.0.1')
+	.option('-a , --alpha', 'Bump alpha')
+	.option('-b , --beta',  'Bump beta')
 	.option('-M , --major', 'Bump major')
 	.option('-m , --minor', 'Bump minor')
 	.option('-p , --patch', 'Bump patch')
@@ -22,15 +24,25 @@ if (program.major)
 {
 	packageversion = versionbumper.bumpMajor(packageversion);
 }
-
+else
 if (program.minor)
 {
 	packageversion = versionbumper.bumpMinor(packageversion);
 }
-
+else
 if (program.patch)
 {
 	packageversion = versionbumper.bumpPatch(packageversion);
+}
+else
+if (program.beta)
+{
+	packageversion = versionbumper.bumpBeta(packageversion);
+}
+else
+if (program.alpha)
+{
+	packageversion = versionbumper.bumpAlpha(packageversion);
 }
 
 if (program.major || program.minor || program.patch)
