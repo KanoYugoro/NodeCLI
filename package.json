@@ -1,28 +1,34 @@
 {
-    "name": "semverupdater",
-    "version": "0.1.2",
-    "description": "Bumps version to semvers guidelines and compiles and pushes things",
-    "main": "index.js",
-    "directories": {
-        "test": "test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/KanoYugoro/NodeCLI.git"
-    },
-    "author": "Anson Wayman",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/KanoYugoro/NodeCLI/issues"
-    },
-    "bin": {
-        "semverupdater": "index.js"
-    },
-    "homepage": "https://github.com/KanoYugoro/NodeCLI#readme",
-    "dependencies": {
-        "shelljs": "^0.5.1"
-    },
-	"devDependencies": {
-		"chai": "^3.0.0"
-	}
+  "name": "semverupdater",
+  "version": "0.1.2",
+  "description": "Bumps version to semvers guidelines and compiles and pushes things",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts":{
+	"test":"mocha",
+	"build":"babel src --out-dir lib",
+	"preinstall":"npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KanoYugoro/NodeCLI.git"
+  },
+  "author": "Anson Wayman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KanoYugoro/NodeCLI/issues"
+  },
+  "bin": {
+    "semverupdater": "index.js"
+  },
+  "homepage": "https://github.com/KanoYugoro/NodeCLI#readme",
+  "dependencies": {
+    "shelljs": "^0.5.1"
+  },
+  "devDependencies": {
+    "babel-core": "^5.7.2",
+    "chai": "^3.0.0"
+  }
 }

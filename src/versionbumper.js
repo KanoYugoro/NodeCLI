@@ -1,36 +1,34 @@
-exports = module.exports = {}
-
-exports.bumpPatch = function(version)
+export function bumpPatch(version)
 {
 	var stringarray = version.split(".");
 	var patchnumber = parseInt(stringarray[2]);
 	patchnumber = patchnumber+1;
 	
-	var result = (stringarray[0]+"."+stringarray[1]+"."+patchnumber);
+	var result = `${stringarray[0]}.${stringarray[1]}.${patchnumber}`;
 	return result;
 }
 
-exports.bumpMinor = function(version)
+export function bumpMinor(version)
 {
 	var stringarray = version.split(".");
 	var patchnumber = parseInt(stringarray[1]);
 	patchnumber = patchnumber+1;
 	
-	var result = (stringarray[0]+"."+patchnumber+".0");
+	var result = `${stringarray[0]}.${patchnumber}.0`;
 	return result;
 }
 
-exports.bumpMajor = function(version)
+export function bumpMajor(version)
 {
 	var stringarray = version.split(".");
 	var patchnumber = parseInt(stringarray[0]);
 	patchnumber = patchnumber+1;
 	
-	var result = (patchnumber+".0.0");
+	var result = `${patchnumber}.0.0`;
 	return result;
 }
 
-exports.bumpAlpha = function(version)
+export function bumpAlpha(version)
 {
 	if (version.indexOf("beta") > -1)
 	{
@@ -50,15 +48,15 @@ exports.bumpAlpha = function(version)
 		{
 			patchnumber = 1;
 		}
-		return stringarray[0]+"."+stringarray[1]+"."+stringarray[2]+"."+patchnumber;
+	return `${stringarray[0]}.${stringarray[1]}.${stringarray[2]}.${patchnumber}`;
 	}
 	else
 	{
-		return version+"-alpha.1";
+		return `${version}-alpha.1`;
 	}
 }
 
-exports.bumpBeta = function(version)
+export function bumpBeta(version)
 {
 	var testVersion = version;
 	
@@ -81,10 +79,10 @@ exports.bumpBeta = function(version)
 		{
 			patchnumber = 1;
 		}
-		return stringarray[0]+"."+stringarray[1]+"."+stringarray[2]+"."+patchnumber;
+		return `${stringarray[0]}.${stringarray[1]}.${stringarray[2]}.${patchnumber}`;
 	}
 	else
 	{
-		return testVersion+"-beta.1";
+		return `${testVersion}-beta.1`;
 	}
 }

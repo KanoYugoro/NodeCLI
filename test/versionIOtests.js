@@ -1,4 +1,4 @@
-var versionIO = require('../bin/versionIO.js');
+var versionIO = require('../lib/versionIO.js');
 var expect = require('chai').expect;
 
 describe("versionIO", function() {

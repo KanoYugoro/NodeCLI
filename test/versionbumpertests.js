@@ -1,4 +1,4 @@
-var versionbumper = require('../bin/versionbumper.js');
+var versionbumper = require('../lib/versionbumper.js');
 var expect = require('chai').expect;
 
 describe("versionbumper", function(){
