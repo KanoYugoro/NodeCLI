@@ -6,8 +6,10 @@ describe("versionbumper", function(){
        it("should bump up the third value in the string passed in.", function(){
            var arg = "1.0.0";
            var result = versionbumper.bumpPatch(arg);
- 
            expect(result).to.equal("1.0.1");
+		   
+		   result = versionbumper.bumpPatch(result);
+		   expect(result).to.equal("1.0.2");
        });
    });
    describe("#bumpMinor()", function(){
