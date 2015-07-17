@@ -1,6 +1,7 @@
 import { exec as executeShell} from 'shelljs';
 
-export function gitCommit(message) {
+export function gitCommit(message) 
+{
 	if (message)
 	{
 		executeShell(`git add -A . && git commit -a -m \"${message}\"`);
@@ -11,7 +12,8 @@ export function gitCommit(message) {
 	}
 }
 
-export function gitTag(version, message) {
+export function gitTag(version, message) 
+{
 	if (message)
 	{
 		executeShell(`git tag -a v\"${version}\" -m \"${message}\"`);
@@ -22,6 +24,7 @@ export function gitTag(version, message) {
 	}
 }
 
-export function gitPush() {
+export function gitPush() 
+{
 	executeShell("git push origin --tags");
 }

@@ -1,35 +1,35 @@
-import { readFile } from 'fs';
-import { writeFile } from 'fs';
+import { readFile } from 'fs-promise';
+import { writeFile } from 'fs-promise';
 
-export function writeVersion(file,newversion,callback)
+export function writeVersion(fname,newversion,callback)
 {
-	readFile(file, function (err, data) {			
-		if (err)
-		{
-			console.log(err)
-		}
+	var oldversion;
+	readFile(fname)
+	.then(function (data) {			
 		var toparse = data.toString();
 		var result = JSON.parse(toparse);
-		var oldversion = result.version;
+		oldversion = result.version;
 		result.version = newversion;
 		var towrite = JSON.stringify(result, null, 4);
-		writeFile(file,towrite,function(otherErr){
-			if (otherErr)
-			{
-				console.log(otherErr);
-			}
-			callback(oldversion,result.version);
-		});
+		return writeFile(fname,towrite);
+	}).then(function() {
+		callback(oldversion, newversion);
+	}).catch(function(reason) {
+		console.log(reason);
 	});
 }
 
-export function readVersion(file,callback)
+export function readVersion(fname,callback)
 {
-	readFile(file, function (err, data) {
+	var oldversion;
+	readFile(fname)
+	.then(function (data) {
 		var toparse = data.toString();
 		var result = JSON.parse(toparse);
-		var oldversion = result.version;
+		oldversion = result.version;
 		
 		callback(oldversion);
+	}).catch(function(reason){
+		console.log(reason);
 	});
 }

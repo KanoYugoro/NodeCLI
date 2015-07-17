@@ -6,10 +6,10 @@
   "directories": {
     "test": "test"
   },
-  "scripts":{
-	"test":"mocha",
-	"build":"babel src --out-dir lib",
-	"preinstall":"npm run build"
+  "scripts": {
+    "test": "mocha",
+    "build": "babel src --out-dir lib",
+    "preinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/KanoYugoro/NodeCLI#readme",
   "dependencies": {
+    "fs-promise": "^0.3.1",
     "shelljs": "^0.5.1"
   },
   "devDependencies": {
